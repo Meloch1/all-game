@@ -1,3 +1,10 @@
+import path from "path";
+
+app.use(express.static("public"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("public/index.html"));
+});
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,3 +23,4 @@
     <div id="root"></div>
   </body>
 </html>
+
